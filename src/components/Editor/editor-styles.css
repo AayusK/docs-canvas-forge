@@ -1,0 +1,90 @@
+/* Custom editor styles */
+.editor-content {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 6rem;
+  background: hsl(var(--editor-bg));
+}
+
+.editor-content .ProseMirror {
+  outline: none;
+  min-height: 29.7cm; /* A4 height */
+  max-width: 21cm; /* A4 width */
+  margin: 0 auto;
+  padding: 2.54cm; /* 1 inch padding */
+  background: hsl(var(--card));
+  box-shadow: 0 0 20px hsla(var(--editor-shadow) / 0.15);
+  border-radius: var(--radius);
+}
+
+.editor-content .ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.editor-content .ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.editor-content .ProseMirror h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.editor-content .ProseMirror p {
+  margin-bottom: 1rem;
+}
+
+.editor-content .ProseMirror ul,
+.editor-content .ProseMirror ol {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.editor-content .ProseMirror li {
+  margin-bottom: 0.25rem;
+}
+
+.editor-content .ProseMirror strong {
+  font-weight: 700;
+}
+
+.editor-content .ProseMirror em {
+  font-style: italic;
+}
+
+.editor-content .ProseMirror u {
+  text-decoration: underline;
+}
+
+.editor-content .ProseMirror s {
+  text-decoration: line-through;
+}
+
+/* Placeholder */
+.editor-content .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: hsl(var(--muted-foreground));
+  pointer-events: none;
+  height: 0;
+  float: left;
+}
+
+@media print {
+  .editor-content .ProseMirror {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+}
